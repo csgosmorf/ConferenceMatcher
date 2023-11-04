@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>html_css</title>
         <style>
             /* The container holding all state checkboxes (now buttons) */
@@ -19,12 +20,36 @@
                 border: none;
                 outline: none;
                 cursor: pointer;
-                padding: 5px 10px;
+                padding: 0.5em 1em;
+                /* padding: 5px 10px; */
                 border-radius: 5px;
                 transition: background-color 0.3s, transform 0.2s;
                 background-color: #707070;  /* Light grey background */
                 color: #333;                /* Dark text color */
                 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);  /* A subtle shadow for depth */
+
+            }
+
+            @media (max-width: 768px) {
+                /* For tablets and smaller */
+                #statesDiv {
+                    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+                }
+
+                button {
+                    font-size: 4vw; /* Scale text based on viewport width */
+                }
+            }
+
+            @media (max-width: 480px) {
+                /* For mobile phones */
+                #statesDiv {
+                    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+                }
+
+                button {
+                    font-size: 5vw; /* Larger text for smaller viewports */
+                }
             }
 
             /* Hover effect */
@@ -47,7 +72,7 @@
 
             /* Button is off */
             button.off {
-                background-color: #707070;  /* Light grey background */
+                background-color: #bbbbbb;  /* Light grey background */
                 color: #333;                /* Dark text color */
             }
 
